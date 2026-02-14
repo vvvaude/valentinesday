@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Date Invite</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #ffe6f2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            color: #d63384;
+        }
+        .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+        .bear {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        .buttons {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        #yes {
+            background-color: #ff69b4;
+            color: white;
+            transform: scale(1);
+        }
+        #no {
+            background-color: #ffb3ba;
+            color: #d63384;
+        }
+        #yes:hover {
+            background-color: #ff1493;
+        }
+        #no:hover {
+            background-color: #ffcccc;
+        }
+        .hearts {
+            position: absolute;
+            top: 10%;
+            left: 10%;
+            font-size: 2em;
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+    </style>
+</head>
+<body>
+    <div class="hearts">❤️💕💖</div>
+    <div class="container">
+        <div class="bear">🐻 Mocha the Bear</div>
+        <h1>Will You Be My Valentine?</h1>
+        <p>Hey love, let's make this Valentine's Day special! Dinner, chocolates, and cuddles with Mocha the Bear? 🐻❤️</p>
+        <div class="buttons">
+            <button id="yes">Yes!</button>
+            <button id="no">No</button>
+        </div>
+    </div>
+
+    <script>
+        let yesScale = 1;
+        const yesButton = document.getElementById('yes');
+        const noButton = document.getElementById('no');
+
+        noButton.addEventListener('click', () => {
+            yesScale += 0.2;
+            yesButton.style.transform = `scale(${yesScale})`;
+        });
+
+        yesButton.addEventListener('click', () => {
+            alert("Yay! I can't wait for our Valentine's date! ❤️🐻");
+        });
+    </script>
+</body>
+</html>
