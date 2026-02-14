@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Yraa 💕</title>
+
+<style>
+    body {
+        background: linear-gradient(to right, #ff9a9e, #fad0c4);
+        text-align: center;
+        font-family: Arial, sans-serif;
+        padding-top: 120px;
+        overflow: hidden;
+    }
+
+    h1 {
+        color: white;
+        font-size: 35px;
+    }
+
+    .buttons {
+        margin-top: 40px;
+    }
+
+    button {
+        padding: 10px 25px;
+        font-size: 18px;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+        margin: 10px;
+        transition: 0.3s;
+    }
+
+    #yes {
+        background-color: #ff4d6d;
+        color: white;
+    }
+
+    #no {
+        background-color: white;
+        color: #ff4d6d;
+        position: relative;
+    }
+
+    #message {
+        margin-top: 40px;
+        font-size: 24px;
+        color: white;
+        display: none;
+    }
+</style>
+</head>
+
+<body>
+
+<h1>Will you be my Valentine? 💖</h1>
+
+<div class="buttons">
+    <button id="yes">Yes 💕</button>
+    <button id="no">No 😢</button>
+</div>
+
+<div id="message">YAYYY!! I love you so much 💗✨</div>
+
+<script>
+    const yesBtn = document.getElementById("yes");
+    const noBtn = document.getElementById("no");
+    const message = document.getElementById("message");
+
+    let size = 18;
+
+    noBtn.addEventListener("click", function() {
+        size += 10;
+        yesBtn.style.fontSize = size + "px";
+        yesBtn.style.padding = (size / 2) + "px " + (size) + "px";
+
+        // Move "No" button randomly
+        noBtn.style.position = "absolute";
+        noBtn.style.left = Math.random() * window.innerWidth + "px";
+        noBtn.style.top = Math.random() * window.innerHeight + "px";
+    });
+
+    yesBtn.addEventListener("click", function() {
+        message.style.display = "block";
+    });
+</script>
+
+</body>
+</html>
